@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { BookOpen, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const chapters = [
   { id: "cover", title: "Cover", icon: "📕" },
@@ -13,9 +14,17 @@ const chapters = [
 ];
 
 const TableOfContents = () => {
+  const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
   const [activeChapter, setActiveChapter] = useState("cover");
   const [scrollProgress, setScrollProgress] = useState(0);
+
+  // Auto-open on desktop, stay collapsed on mobile
+  useEffect(() => {
+    if (isMobile !== undefined) {
+      setIsOpen(!isMobile);
+    }
+  }, [isMobile]);
 
   useEffect(() => {
     const handleScroll = () => {
