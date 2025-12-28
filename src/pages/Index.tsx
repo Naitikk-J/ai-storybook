@@ -7,6 +7,7 @@ import ChapterDevelopers from "@/components/ChapterDevelopers";
 import ChapterContact from "@/components/ChapterContact";
 import Footer from "@/components/Footer";
 import AIChatbot from "@/components/AIChatbot";
+import TableOfContents from "@/components/TableOfContents";
 
 const Index = () => {
   return (
@@ -18,14 +19,31 @@ const Index = () => {
         content="Join AI Club, a magical gathering of students passionate about Artificial Intelligence. Explore workshops, hackathons, and discussions that shape the future of AI."
       />
 
+      {/* Table of Contents Sidebar */}
+      <TableOfContents />
+
       {/* Storybook Sections */}
-      <CoverPage />
-      <ChapterAboutAI />
-      <ChapterEvents />
-      <ChapterDiscussions />
-      <ChapterTeam />
-      <ChapterDevelopers />
-      <ChapterContact />
+      <section id="cover">
+        <CoverPage />
+      </section>
+      <section id="about-ai">
+        <ChapterAboutAI />
+      </section>
+      <section id="events">
+        <ChapterEvents />
+      </section>
+      <section id="discussions">
+        <ChapterDiscussions />
+      </section>
+      <section id="team">
+        <ChapterTeam />
+      </section>
+      <section id="developers">
+        <ChapterDevelopers />
+      </section>
+      <section id="contact">
+        <ChapterContact />
+      </section>
       <Footer />
 
       {/* Floating AI Chatbot */}
