@@ -52,7 +52,7 @@ const events: Event[] = [
 
 const ChapterEvents = () => {
   return (
-    <section id="chapter-2" className="py-20 bg-parchment-dark paper-texture">
+    <section id="chapter-2" className="py-20">
       <div className="container mx-auto px-6">
         <ChapterDivider chapterNumber={2} title="The Call to Innovate" />
 

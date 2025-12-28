@@ -9,7 +9,7 @@ interface ChapterDividerProps {
 const ChapterDivider = ({ chapterNumber, title, className }: ChapterDividerProps) => {
   return (
     <div className={cn("chapter-divider py-16", className)}>
-      <div className="flex flex-col items-center gap-4 px-8 bg-background">
+      <div className="flex flex-col items-center gap-4 px-8">
         <span className="text-sm font-body uppercase tracking-[0.3em] text-muted-foreground">
           Chapter {chapterNumber}
         </span>

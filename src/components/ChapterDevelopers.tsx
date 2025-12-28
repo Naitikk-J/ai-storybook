@@ -58,7 +58,7 @@ const getRoleIcon = (role: string) => {
 
 const ChapterDevelopers = () => {
   return (
-    <section id="chapter-5" className="py-20 bg-parchment paper-texture">
+    <section id="chapter-5" className="py-20">
       <div className="container mx-auto px-6">
         <ChapterDivider chapterNumber={5} title="The Makers Behind the Pages" />
 

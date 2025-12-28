@@ -75,11 +75,11 @@ const TableOfContents = () => {
         className={cn(
           "fixed left-4 top-1/2 -translate-y-1/2 z-50",
           "w-12 h-12 rounded-full",
-          "bg-story-burgundy text-story-cream",
-          "shadow-lg shadow-story-burgundy/30",
+          "bg-primary text-primary-foreground",
+          "shadow-lg shadow-primary/30",
           "flex items-center justify-center",
           "transition-all duration-300 hover:scale-110",
-          "border-2 border-story-gold/30",
+          "border-2 border-gold/30",
           isOpen && "opacity-0 pointer-events-none"
         )}
         aria-label="Open table of contents"
@@ -90,7 +90,7 @@ const TableOfContents = () => {
       {/* Sidebar Overlay */}
       <div
         className={cn(
-          "fixed inset-0 bg-story-ink/50 z-40 transition-opacity duration-300",
+          "fixed inset-0 bg-black/50 z-40 transition-opacity duration-300",
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         )}
         onClick={() => setIsOpen(false)}
@@ -101,9 +101,8 @@ const TableOfContents = () => {
         className={cn(
           "fixed left-0 top-0 h-full z-50",
           "w-80 max-w-[85vw]",
-          "bg-gradient-to-br from-story-parchment via-story-cream to-story-parchment",
-          "border-r-4 border-story-burgundy/20",
-          "shadow-2xl shadow-story-ink/20",
+          "bg-card border border-border",
+          "shadow-2xl shadow-black/50",
           "transition-transform duration-500 ease-out",
           "flex flex-col",
           isOpen ? "translate-x-0" : "-translate-x-full"
@@ -113,34 +112,34 @@ const TableOfContents = () => {
         }}
       >
         {/* Header */}
-        <div className="p-6 border-b-2 border-story-burgundy/10 flex items-center justify-between">
+        <div className="p-6 border-b border-border flex items-center justify-between">
           <div>
-            <h2 className="font-display text-2xl text-story-burgundy">
+            <h2 className="font-display text-2xl text-primary">
               Table of Contents
             </h2>
-            <p className="text-story-ink/60 text-sm mt-1 font-serif italic">
+            <p className="text-muted-foreground text-sm mt-1 font-serif italic">
               Navigate your journey
             </p>
           </div>
           <button
             onClick={() => setIsOpen(false)}
-            className="w-10 h-10 rounded-full bg-story-burgundy/10 flex items-center justify-center hover:bg-story-burgundy/20 transition-colors"
+            className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
           >
-            <X className="w-5 h-5 text-story-burgundy" />
+            <X className="w-5 h-5 text-primary" />
           </button>
         </div>
 
         {/* Overall Progress */}
-        <div className="px-6 py-4 border-b border-story-burgundy/10">
+        <div className="px-6 py-4 border-b border-border">
           <div className="flex items-center justify-between text-sm mb-2">
-            <span className="text-story-ink/70 font-serif">Reading Progress</span>
-            <span className="text-story-burgundy font-medium">
+            <span className="text-muted-foreground font-serif">Reading Progress</span>
+            <span className="text-primary font-medium">
               {Math.round(scrollProgress)}%
             </span>
           </div>
-          <div className="h-2 bg-story-burgundy/10 rounded-full overflow-hidden">
+          <div className="h-2 bg-primary/10 rounded-full overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-story-burgundy to-story-gold rounded-full transition-all duration-300"
+              className="h-full bg-gradient-to-r from-primary to-gold rounded-full transition-all duration-300"
               style={{ width: `${scrollProgress}%` }}
             />
           </div>
@@ -164,8 +163,8 @@ const TableOfContents = () => {
                       "transition-all duration-300",
                       "group relative overflow-hidden",
                       isActive
-                        ? "bg-story-burgundy text-story-cream shadow-md"
-                        : "hover:bg-story-burgundy/10 text-story-ink"
+                        ? "bg-primary text-primary-foreground shadow-md"
+                        : "hover:bg-primary/10 text-foreground"
                     )}
                   >
                     {/* Progress indicator line */}
@@ -181,10 +180,10 @@ const TableOfContents = () => {
                       className={cn(
                         "w-8 h-8 rounded-full flex items-center justify-center text-lg relative z-10",
                         isActive
-                          ? "bg-story-cream/20"
+                          ? "bg-primary/20"
                           : isCompleted
-                          ? "bg-story-gold/30"
-                          : "bg-story-burgundy/10"
+                          ? "bg-gold/30"
+                          : "bg-primary/10"
                       )}
                     >
                       {chapter.icon}
@@ -202,7 +201,7 @@ const TableOfContents = () => {
 
                     {/* Completion checkmark */}
                     {isCompleted && !isActive && (
-                      <span className="text-story-gold relative z-10">✓</span>
+                      <span className="text-gold relative z-10">✓</span>
                     )}
                   </button>
                 </li>
@@ -212,8 +211,8 @@ const TableOfContents = () => {
         </nav>
 
         {/* Decorative Footer */}
-        <div className="p-6 border-t-2 border-story-burgundy/10 text-center">
-          <p className="font-display text-story-burgundy/60 text-sm">
+        <div className="p-6 border-t border-border text-center">
+          <p className="font-display text-muted-foreground text-sm">
             ✦ The Story of AI Club ✦
           </p>
         </div>

@@ -11,7 +11,7 @@ const CoverPage = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden paper-texture">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
@@ -19,8 +19,8 @@ const CoverPage = () => {
           alt="Magical open book with AI neural networks floating above glowing pages"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80" />
       </div>
 
       {/* Vignette Effect */}

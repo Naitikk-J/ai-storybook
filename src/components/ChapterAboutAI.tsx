@@ -31,7 +31,7 @@ const timelineEvents = [
 
 const ChapterAboutAI = () => {
   return (
-    <section id="chapter-1" className="py-20 bg-parchment paper-texture">
+    <section id="chapter-1" className="py-20">
       <div className="container mx-auto px-6">
         <ChapterDivider chapterNumber={1} title="The Rise of Artificial Intelligence" />
 

@@ -10,7 +10,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="relative bg-primary text-primary-foreground py-16 paper-texture overflow-hidden">
+    <footer className="relative text-primary-foreground py-16 overflow-hidden">
       {/* Decorative Top Border */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold to-transparent" />
 

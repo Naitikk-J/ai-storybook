@@ -32,7 +32,7 @@ const discussionTopics = [
 
 const ChapterDiscussions = () => {
   return (
-    <section id="chapter-3" className="py-20 bg-parchment paper-texture">
+    <section id="chapter-3" className="py-20">
       <div className="container mx-auto px-6">
         <ChapterDivider chapterNumber={3} title="The Circle of Minds" />
 

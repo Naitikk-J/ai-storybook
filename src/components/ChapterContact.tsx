@@ -39,7 +39,7 @@ const ChapterContact = () => {
   };
 
   return (
-    <section id="chapter-6" className="py-20 bg-parchment-dark paper-texture">
+    <section id="chapter-6" className="py-20">
       <div className="container mx-auto px-6">
         <ChapterDivider chapterNumber={6} title="Write Your Chapter" />
 

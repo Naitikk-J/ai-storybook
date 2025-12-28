@@ -118,7 +118,7 @@ const AIChatbot = () => {
           </div>
 
           {/* Messages */}
-          <div className="h-72 overflow-y-auto p-4 space-y-4 bg-parchment">
+          <div className="h-72 overflow-y-auto p-4 space-y-4 bg-muted/50">
             {messages.map((msg) => (
               <div
                 key={msg.id}

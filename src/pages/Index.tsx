@@ -8,6 +8,8 @@ import ChapterContact from "@/components/ChapterContact";
 import Footer from "@/components/Footer";
 import AIChatbot from "@/components/AIChatbot";
 import TableOfContents from "@/components/TableOfContents";
+import { SparklesCore } from "@/components/ui/sparkles";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 import { useEffect } from "react";
 
@@ -29,37 +31,56 @@ const Index = () => {
     }, []);
 
     return (
-        <main className="relative">
+        <main className="relative w-full">
+            {/* Sparkles Background */}
+            <div className="fixed inset-0 w-full h-screen z-0 pointer-events-none">
+                <SparklesCore
+                    id="tsparticles-background"
+                    background="transparent"
+                    minSize={0.6}
+                    maxSize={1.4}
+                    particleDensity={100}
+                    className="w-full h-full"
+                    particleColor="#FFFFFF"
+                    speed={1}
+                />
+            </div>
 
-            {/* Table of Contents Sidebar */}
-            <TableOfContents />
+            {/* Content Wrapper */}
+            <div className="relative z-10">
+                {/* Theme Toggle */}
+                <ThemeToggle />
 
-            {/* Storybook Sections */}
-            <section id="cover">
-                <CoverPage />
-            </section>
-            <section id="about-ai">
-                <ChapterAboutAI />
-            </section>
-            <section id="events">
-                <ChapterEvents />
-            </section>
-            <section id="discussions">
-                <ChapterDiscussions />
-            </section>
-            <section id="team">
-                <ChapterTeam />
-            </section>
-            <section id="developers">
-                <ChapterDevelopers />
-            </section>
-            <section id="contact">
-                <ChapterContact />
-            </section>
-            <Footer />
+                {/* Table of Contents Sidebar */}
+                <TableOfContents />
 
-            {/* Floating AI Chatbot */}
-            <AIChatbot />
+                {/* Storybook Sections */}
+                <section id="cover">
+                    <CoverPage />
+                </section>
+                <section id="about-ai">
+                    <ChapterAboutAI />
+                </section>
+                <section id="events">
+                    <ChapterEvents />
+                </section>
+                <section id="discussions">
+                    <ChapterDiscussions />
+                </section>
+                <section id="team">
+                    <ChapterTeam />
+                </section>
+                <section id="developers">
+                    <ChapterDevelopers />
+                </section>
+                <section id="contact">
+                    <ChapterContact />
+                </section>
+                <Footer />
+
+                {/* Floating AI Chatbot */}
+                <AIChatbot />
+            </div>
         </main>
     );
 };
