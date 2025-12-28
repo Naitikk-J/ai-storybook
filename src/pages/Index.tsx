@@ -9,47 +9,59 @@ import Footer from "@/components/Footer";
 import AIChatbot from "@/components/AIChatbot";
 import TableOfContents from "@/components/TableOfContents";
 
+import { useEffect } from "react";
+
 const Index = () => {
-  return (
-    <main className="relative">
-      {/* SEO Meta */}
-      <title>The Story of AI Club | Where Curiosity Meets Intelligence</title>
-      <meta
-        name="description"
-        content="Join AI Club, a magical gathering of students passionate about Artificial Intelligence. Explore workshops, hackathons, and discussions that shape the future of AI."
-      />
+    useEffect(() => {
+        document.title = "The AI Club MITS| Where Curiosity Meets Intelligence";
+        const metaDescription = document.querySelector("meta[name='description']");
+        if (metaDescription) {
+            metaDescription.setAttribute(
+                "content",
+                "Join AI Club, a magical gathering of students passionate about Artificial Intelligence. Explore workshops, hackathons, and discussions that shape the future of AI."
+            );
+        } else {
+            const newMeta = document.createElement("meta");
+            newMeta.name = "description";
+            newMeta.content = "Join AI Club, a magical gathering of students passionate about Artificial Intelligence. Explore workshops, hackathons, and discussions that shape the future of AI.";
+            document.head.appendChild(newMeta);
+        }
+    }, []);
 
-      {/* Table of Contents Sidebar */}
-      <TableOfContents />
+    return (
+        <main className="relative">
 
-      {/* Storybook Sections */}
-      <section id="cover">
-        <CoverPage />
-      </section>
-      <section id="about-ai">
-        <ChapterAboutAI />
-      </section>
-      <section id="events">
-        <ChapterEvents />
-      </section>
-      <section id="discussions">
-        <ChapterDiscussions />
-      </section>
-      <section id="team">
-        <ChapterTeam />
-      </section>
-      <section id="developers">
-        <ChapterDevelopers />
-      </section>
-      <section id="contact">
-        <ChapterContact />
-      </section>
-      <Footer />
+            {/* Table of Contents Sidebar */}
+            <TableOfContents />
 
-      {/* Floating AI Chatbot */}
-      <AIChatbot />
-    </main>
-  );
+            {/* Storybook Sections */}
+            <section id="cover">
+                <CoverPage />
+            </section>
+            <section id="about-ai">
+                <ChapterAboutAI />
+            </section>
+            <section id="events">
+                <ChapterEvents />
+            </section>
+            <section id="discussions">
+                <ChapterDiscussions />
+            </section>
+            <section id="team">
+                <ChapterTeam />
+            </section>
+            <section id="developers">
+                <ChapterDevelopers />
+            </section>
+            <section id="contact">
+                <ChapterContact />
+            </section>
+            <Footer />
+
+            {/* Floating AI Chatbot */}
+            <AIChatbot />
+        </main>
+    );
 };
 
 export default Index;

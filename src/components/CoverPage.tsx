@@ -49,8 +49,9 @@ const CoverPage = () => {
 
         {/* Title */}
         <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-4 animate-fade-in tracking-tight">
-          The Story of{" "}
-          <span className="text-gold gold-glow">AI Club</span>
+          THE{" "}
+          <span className="text-gold gold-glow">AI CLUB</span>
+          {" "}MITS
         </h1>
 
         {/* Subtitle */}
